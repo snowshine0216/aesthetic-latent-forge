@@ -41,42 +41,42 @@ This document outlines the design and implementation plan for a shared logging p
 Tests will be located in `packages/logger/src/__tests__/logger.test.ts`.
 
 ### Logger Creation
-- [ ] **Named logger**: `createLogger('MyService')` should create a logger with the given name.
-- [ ] **Default options**: Logger without options should use environment-based defaults.
-- [ ] **Custom level**: `createLogger('App', { level: 'warn' })` should only log warn and error.
-- [ ] **Custom prefix**: Logger name should appear in log output.
+- [x] **Named logger**: `createLogger('MyService')` should create a logger with the given name.
+- [x] **Default options**: Logger without options should use environment-based defaults.
+- [x] **Custom level**: `createLogger('App', { level: 'warn' })` should only log warn and error.
+- [x] **Custom prefix**: Logger name should appear in log output.
 
 ### Log Level Filtering
-- [ ] **Debug level**: When level is `debug`, all messages should be logged.
-- [ ] **Info level**: When level is `info`, debug messages should be filtered out.
-- [ ] **Warn level**: When level is `warn`, only warn and error should be logged.
-- [ ] **Error level**: When level is `error`, only error messages should be logged.
-- [ ] **Silent level**: When level is `silent`, no messages should be logged.
+- [x] **Debug level**: When level is `debug`, all messages should be logged.
+- [x] **Info level**: When level is `info`, debug messages should be filtered out.
+- [x] **Warn level**: When level is `warn`, only warn and error should be logged.
+- [x] **Error level**: When level is `error`, only error messages should be logged.
+- [x] **Silent level**: When level is `silent`, no messages should be logged.
 
 ### Log Output Format
-- [ ] **Console mode**: In development, output should be human-readable.
-- [ ] **JSON mode**: In production, output should be structured JSON.
-- [ ] **Metadata included**: Additional meta object should be included in output.
-- [ ] **Timestamp included**: Each log entry should include a timestamp.
+- [x] **Console mode**: In development, output should be human-readable.
+- [x] **JSON mode**: In production, output should be structured JSON.
+- [x] **Metadata included**: Additional meta object should be included in output.
+- [x] **Timestamp included**: Each log entry should include a timestamp.
 
 ### Child Loggers
-- [ ] **Inherit parent level**: Child logger should inherit parent's log level.
-- [ ] **Merge bindings**: Child logger should include parent's bindings plus its own.
-- [ ] **Independent**: Changes to child should not affect parent.
+- [x] **Inherit parent level**: Child logger should inherit parent's log level.
+- [x] **Merge bindings**: Child logger should include parent's bindings plus its own.
+- [x] **Independent**: Changes to child should not affect parent.
 
 ### Global Configuration
-- [ ] **setGlobalLogLevel**: Should update default level for new loggers.
-- [ ] **Existing loggers unaffected**: Already-created loggers should not change.
+- [x] **setGlobalLogLevel**: Should update default level for new loggers.
+- [x] **Existing loggers unaffected**: Already-created loggers should not change.
 
 ### Edge Cases
-- [ ] **Circular references**: Meta with circular references should not throw.
-- [ ] **Undefined meta**: Calling `logger.info('msg', undefined)` should work.
-- [ ] **Empty message**: Empty string message should be logged.
-- [ ] **Non-string message**: Should stringify non-string first argument.
+- [x] **Circular references**: Meta with circular references should not throw.
+- [x] **Undefined meta**: Calling `logger.info('msg', undefined)` should work.
+- [x] **Empty message**: Empty string message should be logged.
+- [x] **Non-string message**: Should stringify non-string first argument.
 
 ### Integration
-- [ ] **Export from package**: `import { createLogger } from '@repo/logger'` should work.
-- [ ] **Logger interface export**: `import type { Logger } from '@repo/logger'` should work.
+- [x] **Export from package**: `import { createLogger } from '@repo/logger'` should work.
+- [x] **Logger interface export**: `import type { Logger } from '@repo/logger'` should work.
 
 ## 4. Implementation Details
 

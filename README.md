@@ -12,6 +12,7 @@ aesthetic-latent-forge/
 ├── packages/
 │   ├── ui/                  # Shared React components
 │   ├── supabase/            # Supabase client utilities
+│   ├── logger/              # Shared logging utilities
 │   ├── ai-utils/            # Shared LLM utilities
 │   └── config/              # Shared ESLint, TypeScript, Tailwind configs
 ├── turbo.json               # Turborepo configuration
@@ -132,6 +133,27 @@ import { formatPrompt, truncateToTokenLimit } from '@repo/ai-utils'
 ### @repo/config
 
 Shared configuration for TypeScript, ESLint, and Tailwind.
+
+### @repo/logger
+
+Zero-dependency, environment-aware logging for the monorepo. Provides structured JSON output in production and human-readable colored output in development.
+
+```tsx
+import { createLogger } from '@repo/logger'
+
+const logger = createLogger('MyService')
+
+logger.info('Application started')
+logger.debug('Processing', { requestId: 'abc123' })
+logger.warn('Rate limit approaching', { current: 95, limit: 100 })
+logger.error('Failed to process', { error: 'Connection timeout' })
+
+// Child loggers with context
+const reqLogger = logger.child({ requestId: 'req-123' })
+reqLogger.info('Request handled')
+```
+
+See [packages/logger/docs/README.md](packages/logger/docs/README.md) for full documentation.
 
 ## Adding a New App
 
