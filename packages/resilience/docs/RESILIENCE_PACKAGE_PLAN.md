@@ -156,55 +156,55 @@ export interface TimeoutEvent {
 Tests will be located in `packages/resilience/src/__tests__/resilience.test.ts`.
 
 ### Retry Policy
-- [ ] **Basic Retry**: Should retry a failing function up to the specified limit.
-- [ ] **Success after Retry**: Should return the result if a subsequent retry succeeds.
-- [ ] **Exponential Backoff**: Should wait increasingly longer between attempts.
-- [ ] **Fixed Backoff**: Should wait the same duration between attempts when using fixed strategy.
-- [ ] **Max Attempts**: Should throw `RetryExhaustedError` after reaching max attempts.
-- [ ] **Jitter**: Delays should have randomness when jitter is enabled.
-- [ ] **No Jitter**: Delays should be consistent when jitter is disabled.
+- [x] **Basic Retry**: Should retry a failing function up to the specified limit.
+- [x] **Success after Retry**: Should return the result if a subsequent retry succeeds.
+- [x] **Exponential Backoff**: Should wait increasingly longer between attempts.
+- [x] **Fixed Backoff**: Should wait the same duration between attempts when using fixed strategy.
+- [x] **Max Attempts**: Should throw `RetryExhaustedError` after reaching max attempts.
+- [x] **Jitter**: Delays should have randomness when jitter is enabled.
+- [x] **No Jitter**: Delays should be consistent when jitter is disabled.
 
 ### Error Filtering
-- [ ] **Skip 400 errors**: Should not retry when response status is 400.
-- [ ] **Skip 401 errors**: Should not retry when response status is 401.
-- [ ] **Skip 403 errors**: Should not retry when response status is 403.
-- [ ] **Skip 404 errors**: Should not retry when response status is 404.
-- [ ] **Retry 500 errors**: Should retry when response status is 500.
-- [ ] **Retry 503 errors**: Should retry when response status is 503.
-- [ ] **Retry network errors**: Should retry on `ECONNRESET`, `ETIMEDOUT`.
-- [ ] **Custom filter**: Should respect custom `shouldRetry` function.
+- [x] **Skip 400 errors**: Should not retry when response status is 400.
+- [x] **Skip 401 errors**: Should not retry when response status is 401.
+- [x] **Skip 403 errors**: Should not retry when response status is 403.
+- [x] **Skip 404 errors**: Should not retry when response status is 404.
+- [x] **Retry 500 errors**: Should retry when response status is 500.
+- [x] **Retry 503 errors**: Should retry when response status is 503.
+- [x] **Retry network errors**: Should retry on `ECONNRESET`, `ETIMEDOUT`.
+- [x] **Custom filter**: Should respect custom `shouldRetry` function.
 
 ### Bulkhead Policy
-- [ ] **Limit concurrent**: Should limit concurrent executions to `maxConcurrent`.
-- [ ] **Queue overflow**: Should throw `BulkheadRejectedError` when queue is full.
-- [ ] **Process queue**: Should process queued requests when slots become available.
+- [x] **Limit concurrent**: Should limit concurrent executions to `maxConcurrent`.
+- [x] **Queue overflow**: Should throw `BulkheadRejectedError` when queue is full.
+- [x] **Process queue**: Should process queued requests when slots become available.
 
 ### Timeout Policy
-- [ ] **Timeout exceeded**: Should throw `TimeoutError` when operation exceeds timeout.
-- [ ] **Complete before timeout**: Should return result if operation completes in time.
+- [x] **Timeout exceeded**: Should throw `TimeoutError` when operation exceeds timeout.
+- [x] **Complete before timeout**: Should return result if operation completes in time.
 
 ### Fallback
-- [ ] **Return fallback value**: Should return fallback value when all retries fail.
-- [ ] **Fallback function**: Should call fallback function with the error.
-- [ ] **No fallback**: Should throw error when no fallback is provided.
+- [x] **Return fallback value**: Should return fallback value when all retries fail.
+- [x] **Fallback function**: Should call fallback function with the error.
+- [x] **No fallback**: Should throw error when no fallback is provided.
 
 ### Metrics
-- [ ] **onRetry callback**: Should call onRetry with correct event data on each retry.
-- [ ] **onSuccess callback**: Should call onSuccess with duration and attempt count.
-- [ ] **onFailure callback**: Should call onFailure with error and attempt count.
-- [ ] **onBulkheadRejected callback**: Should call when request is rejected.
-- [ ] **onTimeout callback**: Should call when operation times out.
+- [x] **onRetry callback**: Should call onRetry with correct event data on each retry.
+- [x] **onSuccess callback**: Should call onSuccess with duration and attempt count.
+- [x] **onFailure callback**: Should call onFailure with error and attempt count.
+- [x] **onBulkheadRejected callback**: Should call when request is rejected.
+- [x] **onTimeout callback**: Should call when operation times out.
 
 ### Logger Integration
-- [ ] **Log retries**: Should log retry attempts when logger is provided.
-- [ ] **Log success**: Should log successful completion when logger is provided.
-- [ ] **Log failure**: Should log final failure when logger is provided.
-- [ ] **No logger**: Should not throw when logger is not provided.
+- [x] **Log retries**: Should log retry attempts when logger is provided.
+- [x] **Log success**: Should log successful completion when logger is provided.
+- [x] **Log failure**: Should log final failure when logger is provided.
+- [x] **No logger**: Should not throw when logger is not provided.
 
 ### Type Safety
-- [ ] **Preserve signature**: Wrapped function should have same type signature.
-- [ ] **Generic types**: Should work with various return types.
-- [ ] **Async only**: Should only accept async functions.
+- [x] **Preserve signature**: Wrapped function should have same type signature.
+- [x] **Generic types**: Should work with various return types.
+- [x] **Async only**: Should only accept async functions.
 
 ## 6. Implementation Details
 

@@ -14,6 +14,7 @@ aesthetic-latent-forge/
 │   ├── supabase/            # Supabase client utilities
 │   ├── logger/              # Shared logging utilities
 │   ├── ai-utils/            # Shared LLM utilities
+│   ├── resilience/          # Resilience patterns (retry, bulkhead, timeout)
 │   └── config/              # Shared ESLint, TypeScript, Tailwind configs
 ├── turbo.json               # Turborepo configuration
 ├── pnpm-workspace.yaml      # pnpm workspace configuration
@@ -154,6 +155,36 @@ reqLogger.info('Request handled')
 ```
 
 See [packages/logger/docs/README.md](packages/logger/docs/README.md) for full documentation.
+
+### @repo/resilience
+
+Resilience and fault-handling library using `cockatiel`. Provides Retry (with exponential backoff), Bulkhead, Timeout, and Fallback policies to make applications robust against transient failures.
+
+```tsx
+import { withResilience } from '@repo/resilience'
+
+// Wrap any async function with resilience policies
+const resilientFetch = withResilience(fetchUser, {
+  name: 'fetchUser',
+  retry: { attempts: 3, backoff: 'exponential' },
+  timeout: 5000,
+  bulkhead: { maxConcurrent: 5 },
+  fallback: { name: 'Guest', id: 'default' },
+})
+
+const user = await resilientFetch('123')
+```
+
+**Features:**
+- **Retry** with exponential/fixed backoff and jitter
+- **Error Filtering** (4xx errors not retried, 5xx and network errors retried)
+- **Bulkhead** for concurrent execution limiting
+- **Timeout** for operation cancellation
+- **Fallback** values or functions
+- **Metrics** callbacks for observability
+- **Logger** integration with `@repo/logger`
+
+See [packages/resilience/docs/README.md](packages/resilience/docs/README.md) for full documentation.
 
 ## Adding a New App
 

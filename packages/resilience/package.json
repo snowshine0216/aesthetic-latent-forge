@@ -1,0 +1,34 @@
+{
+    "name": "@repo/resilience",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "scripts": {
+        "type-check": "tsc --noEmit",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "dependencies": {
+        "cockatiel": "^3.2.1"
+    },
+    "peerDependencies": {
+        "@repo/logger": "workspace:*"
+    },
+    "peerDependenciesMeta": {
+        "@repo/logger": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@repo/config": "workspace:*",
+        "@repo/logger": "workspace:*",
+        "eslint": "^9.17.0",
+        "typescript": "^5.7.2",
+        "vitest": "^2.1.8"
+    }
+}
