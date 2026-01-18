@@ -1,0 +1,1 @@
+Use the `Search Jira issues with JQL` tool from the `atlassian` MCP with JQL: `parent = "ISSUE_KEY" AND issuetype = Defect` to search the input issue key (in cloud id `strategyagile.atlassian.net`) and output with a list of issue keys by using bash command `jq -r '.[] | .text | fromjson | .issues[].key'`.

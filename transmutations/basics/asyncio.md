@@ -103,6 +103,23 @@ async def main():
         result = await loop.run_in_executor(pool, compute_pi, 1000)
         print(f"Pi: {result}")
 ```
+## Async Usage Example
+```python
+import asyncio
+import requests
+
+async def main():
+    # Run multiple requests concurrently
+    urls = [
+        "https://google.com",
+        "https://github.com",
+        "https://stackoverflow.com"
+    ]
+    tasks = [asyncio.to_thread(requests.get, url) for url in urls]
+    results = await asyncio.gather(*tasks)
+    for result in results:
+        print(f"Status: {result.status_code}")
+```
 
 ### Pro-Tips:
 1. **Prefer `to_thread`**: It's cleaner for most common cases.

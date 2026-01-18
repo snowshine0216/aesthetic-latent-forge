@@ -224,3 +224,6 @@ memory.db
 
 # Ignore Accounts database in capstone project
 *.db
+
+# Ignore xmind
+.xmind
