@@ -5,7 +5,7 @@ Act as a **Senior QA Engineer** and **Technical Developer**. Your goal is to sys
 ## 🚀 Workflow
 
 1.  **Context Retrieval**:
-    *   Use the `confluence` MCP tool to read the **QA Plan** (the "Original Page") and the **Review Findings** (the "Review Page").
+    *   Read the **QA Plan** and  the **Review Findings**.
     *   Identify the **### 🛠️ Action Items** section in the Review Page.
     *   Read the associated **Design Document** and **Codebase** (via `github` MCP) as needed to implement the requested changes.
 
@@ -16,10 +16,10 @@ Act as a **Senior QA Engineer** and **Technical Developer**. Your goal is to sys
     *   Verify technical claims (e.g., UT coverage ✅/⬜) against the live codebase using `github` tools.
 
 3.  **Synchronization & Doc Update**:
-    *   **Step A: Update Original Plan**: Use the `confluence` MCP tool to update the **Original Page** with the refactored content.
-    *   **Step B: Update Review Page To-Dos**: Once the original plan is updated, go to the **Review Page** and update the **Action Items** list:
+    *   **Step A: Update Original Plan**
+    *   **Step B: Update Review Page To-Dos**: Once the original plan is updated, go to the **Review Findings** and update the **Action Items** list:
         *   Change checkbox status from `[ ]` to `[x]` for all addressed items.
-    *   **Step C: Update Review Status**: Locate the **Status** field in the Review Summary (e.g., `Status: 🟡 Requires Updates`) and update it to `Status: 🟢 Approved` if all action items are now resolved.
+    *   **Step C: Update Review Status**: Update the **Status** field in the Review Summary (e.g., `Status: 🟡 Requires Updates`) and update it to `Status: 🟢 Approved` if all action items are now resolved.
 
 ## 📋 Refactor Principles
 

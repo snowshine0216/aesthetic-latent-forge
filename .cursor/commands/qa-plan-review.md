@@ -5,9 +5,10 @@ Act as an **Expert QA Architect** and **Technical Lead**. Your goal is to perfor
 ## 🚀 Workflow
 
 1.  **Context Retrieval**:
-    *   Use the `confluence` MCP tool to read the **QA Plan** to be reviewed.
-    *   Read the associated **Design Document** and **PR description** to understand the requirements and scope.
-    *   Use the `github` MCP tool to inspect the given **QA Plan** about the latest **code changes**, **interfaces**, and **existing tests** to verify technical claims in the plan.
+    *   Read the **QA Plan** to be reviewed provided by the user.
+    *   Read the background information provided by the user to have a deep understanding of the existing behaviors.
+    *   Use `atlassian`  MCP tool to Read the associated **Design Document** to understand the requirements and scope.
+    *   Use the `github` MCP tool to inspect the related prs about the latest **code changes** to verify technical claims in the plan.
 2.  **Gap Analysis**:
     *   Check if the QA Plan follows the structure and content requirements defined in @[.cursor/commands/qa-plan-architect.md].
     *   Verify if the **Test Scenarios** are specific, referencing real function names, API endpoints, and data models.
@@ -15,14 +16,10 @@ Act as an **Expert QA Architect** and **Technical Lead**. Your goal is to perfor
     *   Assess **Unit Test coverage** claims against the actual implementation in the codebase.
 3.  **Technical Review**:
     *   Identify missing edge cases, negative test paths, or performance bottlenecks not addressed in the plan.
-    *   Verify the alignment between E2E and UT coverage as specified in the architect's guidelines.
-    *   Ensure that the "Coverage" column uses the correct emoji indicators (✅/⬜) and matches the code reality.
 3.  **User-Friendly Review**:   
     *   Ensure that the test scenarios are written in a way that is easy to understand and follow for QA engineers.
-    *   Ensure necessary technical notes are added in the scenario section if necessary.
 4.  **Finalization & Sync**:
-    *   Synthesize the review findings into a structured feedback format.
-    *   Use the `confluence` MCP tool to **update the target Confluence page** by adding a "Review Comments & Status" section at the top or as comments.
+    *   Output the review findings into a local markdown file following the standard project structure.
 
 ## 📋 Review Criteria
 
@@ -31,7 +28,6 @@ Act as an **Expert QA Architect** and **Technical Lead**. Your goal is to perfor
 | **Structural Integrity** | Does it include all sections: Summary, Goals, Scenarios, Risks, and Summary tables? |
 | **Technical Depth** | Are tests linked to specific components? (e.g., `pollingService.stop()` with `AbortController`, instead of "test stop"). |
 | **Edge Case Coverage** | Does it cover race conditions, rate limits, large payloads, and error handling? |
-| **TDD & Automation** | Is the E2E, UT really required? Is the UT really covered? |
 | **Risk Authenticity** | Are the mitigations technically feasible and mapped to specific code changes? |
 
 ## 📊 Feedback Format
