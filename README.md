@@ -33,8 +33,28 @@ For detailed technical documentation, please refer to the [Forge README](./forge
 
 ---
 ## MCP Servers
-- **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp.
+- **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp
 - **[Figma]**: https://github.com/GLips/Figma-Context-MCP
+- **[GitHub]**: https://github.com/github/github-mcp-server
+
+### GitHub MCP Server
+1. download
+```bash
+curl -L https://github.com/github/github-mcp-server/releases/download/v0.29.0/github-mcp-server_Darwin_x86_64.tar.gz -o mcp.tar.gz \
+&& tar -xzf mcp.tar.gz \
+&& chmod +x github-mcp-server
+```
+2. move to local bin
+```bash
+# Move the binary to a global location
+sudo mv github-mcp-server /usr/local/bin/
+
+# trust the binary-optional
+sudo xattr -rd com.apple.quarantine github-mcp-server
+
+# Verify it works from any directory
+github-mcp-server --version
+```
 
 ```json
 {
@@ -67,6 +87,31 @@ For detailed technical documentation, please refer to the [Forge README](./forge
       "command": "/Users/xuyin/.nvm/versions/node/v22.21.1/bin/npx",
       "args": ["-y", "figma-developer-mcp", "--figma-api-key=your-figma-api-key", "--stdio"]
     }
-  }
+  },
+   "github": {
+        "command": "github-mcp-server",
+        "args": ["stdio"],
+        "env": {
+          "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>",
+          "GITHUB_TOOLSETS": "repos,pull_requests"
+        }
+      },
+  "mcp-atlassian": {
+      "command": "uvx",
+      "args": [
+        "--python=3.12",
+        "mcp-atlassian",
+        "--enabled-tools",
+        "confluence_search,confluence_get_page,jira_get_issue,jira_search"
+      ],
+      "env": {
+        "JIRA_URL": "https://strategyagile.atlassian.net",
+        "JIRA_USERNAME": "your@microstrategy.com",
+        "JIRA_API_TOKEN": "<YOUR_TOKEN>",
+        "CONFLUENCE_URL": "https://your-company.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your@microstrategy.com",
+        "CONFLUENCE_API_TOKEN": "<YOUR_TOKEN>"
+      }
+    }
 }
 ```
