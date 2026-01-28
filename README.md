@@ -29,3 +29,38 @@ The standard formulas and pure archetypes. Here you will find "Gold Standard" bo
 - **Database/Auth**: Supabase
 
 For detailed technical documentation, please refer to the [Forge README](./forge/README.md).
+
+
+---
+## MCP Servers
+- **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp.
+
+```json
+{
+  "mcpServers": {
+    "playwright-mcp": {
+      "type": "stdio",
+      "command": "/Users/xuyin/.nvm/versions/node/v20.18.2/bin/node",
+      "args": [
+        "/Users/xuyin/.nvm/versions/node/v20.18.2/lib/node_modules/@executeautomation/playwright-mcp-server/dist/index.js"
+      ]
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "/Users/xuyin/.nvm/versions/node/v20.18.2/bin/node",
+      "args": [
+        "/Users/xuyin/.nvm/versions/node/v20.18.2/lib/node_modules/@upstash/context7-mcp/dist/index.js"
+      ]
+    },
+    "xmind-generator": {
+      "type": "stdio",
+      "command": "/Users/xuyin/.nvm/versions/node/v22.21.1/bin/node",
+      "args": ["/Users/xuyin/Documents/Repository/xmind-generator-mcp/dist/index.js"],
+      "env": {
+        "outputPath": "/Users/xuyin/Documents/FeatureTest/QAPlans",
+        "autoOpenFile": "false"
+      }
+    }
+  }
+}
+```
