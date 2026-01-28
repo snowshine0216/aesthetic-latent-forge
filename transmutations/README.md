@@ -79,3 +79,9 @@ With **uv**, we follow a more refined process than standard `pip`:
 
 ---
 *Consistency is the bedrock of mastery.*
+
+---
+## MCP Servers
+- **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp.
+
+---

@@ -5,9 +5,9 @@ Act as a **Senior QA Engineer** and **Technical Developer**. Your goal is to sys
 ## 🚀 Workflow
 
 1.  **Context Retrieval**:
-    *   Read the **QA Plan** and  the **Review Findings**.
+    *   Read the **QA Plan** and  the **Review Findings** and other provided files.
     *   Identify the **### 🛠️ Action Items** section in the Review Page.
-    *   Read the associated **Design Document** and **Codebase** (via `github` MCP) as needed to implement the requested changes.
+    *   [Optional] Read the associated **Design Document** and **Codebase** (via `github` MCP) as needed to implement the requested changes ONLY when the action items are vague or not specific.
 
 2.  **Implementation of Feedback**:
     *   Address each item in the **Action Items** list systematically.
@@ -24,7 +24,7 @@ Act as a **Senior QA Engineer** and **Technical Developer**. Your goal is to sys
 ## 📋 Refactor Principles
 
 | Principle | Detail |
-|:---|:---|
+|:---|:---:|
 | **Direct Mapping** | Every edit in the QA Plan should correspond to one or more Action Items from the review. |
 | **Technical Accuracy** | Never "blindly" fix a comment. Verify the correct function/API names in the code before updating the plan. |
 | **Integrity** | Maintain the structure and key metadata defined in the architect guidelines. |
@@ -43,4 +43,4 @@ When reviewing the action items, expect this format from @[.cursor/commands/qa-p
 - **Atomicity**: Ensure the Original Page and the Review Page are both updated to keep them in sync.
 - **Verification**: ALWAYS double-check the code if the review questions a technical claim.
 - **Chunking**: If the pages are large, process them in segments.
-- **ONLY update the documentation**: This command focuses on the QA Plan and Review Page on Confluence. 
+- **ONLY update the documentation**: This command focuses on the updating existing QA Plan
