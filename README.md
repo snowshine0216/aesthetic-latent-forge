@@ -93,7 +93,7 @@ github-mcp-server --version
         "args": ["stdio"],
         "env": {
           "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>",
-          "GITHUB_TOOLSETS": "repos,pull_requests"
+          "GITHUB_TOOLS": "get_file_contents,pull_request_read,search_code, search_pull_requests, search_repositories, get_commit, list_branches, list_commits, list_pull_requests"
         }
       },
   "mcp-atlassian": {
