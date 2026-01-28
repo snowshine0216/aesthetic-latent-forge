@@ -34,6 +34,7 @@ For detailed technical documentation, please refer to the [Forge README](./forge
 ---
 ## MCP Servers
 - **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp.
+- **[Figma]**: https://github.com/GLips/Figma-Context-MCP
 
 ```json
 {
@@ -60,6 +61,11 @@ For detailed technical documentation, please refer to the [Forge README](./forge
         "outputPath": "/Users/xuyin/Documents/FeatureTest/QAPlans",
         "autoOpenFile": "false"
       }
+    },
+    "figma-context-mcp": {
+      "type": "stdio",
+      "command": "/Users/xuyin/.nvm/versions/node/v22.21.1/bin/npx",
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key=your-figma-api-key", "--stdio"]
     }
   }
 }
