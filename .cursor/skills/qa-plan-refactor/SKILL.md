@@ -45,6 +45,10 @@ Based on `@.cursor/commands/qa-plan-refactor.md`, follow this systematic approac
 /Users/xuyin/Documents/FeatureTest/QAPlans/qa_plan_comprehensive_login_2026-01-29.md
 ```
 
+**Read Provided Materials**:
+- use `github` MCP to read the associated pr
+- use `atlassian` MCP to read the associated design document and jira issues
+- use `figma` MCP to read the associated figma design
 **Read Review Findings**:
 ```bash
 /Users/xuyin/Documents/FeatureTest/QAPlans/qa_plan_review_login_2026-01-29.md

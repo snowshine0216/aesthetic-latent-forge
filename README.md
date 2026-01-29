@@ -55,6 +55,8 @@ sudo xattr -rd com.apple.quarantine github-mcp-server
 # Verify it works from any directory
 github-mcp-server --version
 ```
+- **[Xmind]**: https://github.com/BangyiZhang/xmind-generator-mcp.
+- **[Figma]**: https://github.com/GLips/Figma-Context-MCP, https://www.figma.com/mcp-catalog/
 
 ```json
 {
@@ -88,6 +90,10 @@ github-mcp-server --version
       "args": ["-y", "figma-developer-mcp", "--figma-api-key=your-figma-api-key", "--stdio"]
     }
   },
+   "Figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "headers": {}
+    },
    "github": {
         "command": "github-mcp-server",
         "args": ["stdio"],
