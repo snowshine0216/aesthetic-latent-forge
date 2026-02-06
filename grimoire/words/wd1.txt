@@ -1,0 +1,4 @@
+seminal: Lilian Weng’s "LLM Powered Autonomous Agents" is a seminal piece that defines the agent framework through three core components: Planning, Memory, and Tool Use.
+mundane: 普通的. distinguish mundane from core memories. Ask LM directly.
+salient: Prompt LM with 100 most recent observations and to generate 3 most salient high-level questions given a set of observations/statements. Then ask LM to answer those questions.
+diffusion: This fun simulation results in emergent social behavior, such as information diffusion, relationship memory
